@@ -34,19 +34,19 @@ PM_START_TEXT = """
 ┈┈┈┈╲┊┊┊┊╱┈┈┈┈
 ┈┈┈┈▕╲▂▂╱▏┈┈┈┈
 ╱▔▔▔▔┊┊┊┊▔▔▔▔╲
-HOI    {}, MY NAME IS {} !
+Hello,    {}, MY NAME IS {} !
 
 I AM A GROUP MANAGER BOT MAINTAINED BY 
 
 [THIS LEGEND](tg://user?id={}).
 
-HIT HELP FOR COMMANDS  /help
 
-I AM COMPLETELY OPEN SOURCE
+Donate Owner [Paypal](paypal.me/KshitijGagan)
 
-MY SOURCE CODE IS AVAILABLE TO YOU
+You can get Support Here [Support Group](t.me/janemanrobotsupport)
 
-[HERE](https://github.com/leobrownlee/phantom)
+Click /help or Help button below to find out more about how to use me to my full potential.
+
 
 """
 
