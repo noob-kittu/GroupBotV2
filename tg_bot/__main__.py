@@ -28,24 +28,19 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 
 
-┈┈┈┈╱▔▔▔▔╲┈┈┈┈
-┈┈┈▕▕╲┊┊╱▏▏┈┈┈
-┈┈┈▕▕▂╱╲▂▏▏┈┈┈
-┈┈┈┈╲┊┊┊┊╱┈┈┈┈
-┈┈┈┈▕╲▂▂╱▏┈┈┈┈
-╱▔▔▔▔┊┊┊┊▔▔▔▔╲
-Hello,    {}, MY NAME IS {} !
+❤❣   (>‿◠)✌   ❤❣
+
+Hello,{}, MY NAME IS {} !
 
 I AM A GROUP MANAGER BOT MAINTAINED BY 
 
-[THIS LEGEND](tg://user?id={}).
-
+[ҜѕʰⒾ𝐓𝐢𝕛 ｇαĞⓐή™](t.me/kshitijkabot).
 
 Donate Owner [Paypal](paypal.me/KshitijGagan)
 
-You can get Support Here [Support Group](t.me/janemanrobotsupport)
+You can get Support Here [Support Group](t.me/BotSupportGroup)
 
-Click /help or Help button below to find out more about how to use me to my full potential.
+Click /help or Help button below to find out more about, how to use me to my full potential.
 
 
 """
