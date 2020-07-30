@@ -120,11 +120,7 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
 
             # Welcome yourself
             elif new_mem.id == bot.id:
-                update.effective_message.reply_text("Hello 😎 
-📌Important Instruction For @admin ⚒
-Please Make Me Admin with all the Permission, So I Can Work Properly
-To Know about Cmds Hit /help
-Thank You")
+                update.effective_message.reply_text("Hello 😎 📌Important Instruction For @admin ⚒ Please Make Me Admin with all the Permission, So I Can Work Properly To Know about Cmds Hit /help Thank You")
 
             else:
                 # If welcome message is media, send with appropriate function
