@@ -120,7 +120,11 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
 
             # Welcome yourself
             elif new_mem.id == bot.id:
-                update.effective_message.reply_text("hello 😎")
+                update.effective_message.reply_text("Hello 😎 
+📌Important Instruction For @admin ⚒
+Please Make Me Admin with all the Permission, So I Can Work Properly
+To Know about Cmds Hit /help
+Thank You")
 
             else:
                 # If welcome message is media, send with appropriate function
@@ -595,18 +599,18 @@ def user_button(bot: Bot, update: Update):
 
 WELC_HELP_TXT = ("Your group's welcome/goodbye messages can be personalised in multiple ways. If you want the messages"
                  " to be individually generated, like the default welcome message is, you can use *these* variables:\n"
-                 " - `{{first}}`: this represents the user's *first* name\n"
-                 " - `{{last}}`: this represents the user's *last* name. Defaults to *first name* if user has no "
+                 " - `{first}`: this represents the user's *first* name\n"
+                 " - `{last}`: this represents the user's *last* name. Defaults to *first name* if user has no "
                  "last name.\n"
-                 " - `{{fullname}}`: this represents the user's *full* name. Defaults to *first name* if user has no "
+                 " - `{fullname}`: this represents the user's *full* name. Defaults to *first name* if user has no "
                  "last name.\n"
-                 " - `{{username}}`: this represents the user's *username*. Defaults to a *mention* of the user's "
+                 " - `{username}`: this represents the user's *username*. Defaults to a *mention* of the user's "
                  "first name if has no username.\n"
-                 " - `{{mention}}`: this simply *mentions* a user - tagging them with their first name.\n"
-                 " - `{{id}}`: this represents the user's *id*\n"
-                 " - `{{count}}`: this represents the user's *member number*.\n"
-                 " - `{{chatname}}`: this represents the *current chat name*.\n"
-                 "\nEach variable MUST be surrounded by `{{}}` to be replaced.\n"
+                 " - `{mention}`: this simply *mentions* a user - tagging them with their first name.\n"
+                 " - `{id}`: this represents the user's *id*\n"
+                 " - `{count}`: this represents the user's *member number*.\n"
+                 " - `{chatname}`: this represents the *current chat name*.\n"
+                 "\nEach variable MUST be surrounded by `{}` to be replaced.\n"
                  "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
                  "Buttons are also supported, so you can make your welcomes look awesome with some nice intro "
                  "buttons.\n"
