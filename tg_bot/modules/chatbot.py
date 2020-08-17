@@ -90,11 +90,14 @@ def chatbot(bot: Bot, update: Update):
 __mod_name__ = "CHAT BOT"
 
 __help__ = """
+To Prevent Flood, We have taken Decision to mnaually add in chat,
+When any Chat Admins Request it
 
-Powered by CoffeeHouse (https://coffeehouse.intellivoid.net/) from @Intellivoid
+To Request your Chat to enable Auto Messaging (Enabling API)
+Please Request it here at @BotSupportGroup and Tag @admin
 
- - /addchat : Enables Chatbot mode in the chat.
- - /rmchat  : Disables Chatbot mode in the chat.
+
+This Module works on CoffeHosuse a part of @Intellivoid
 """
                   
 ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat, filters=CustomFilters.dev_filter)
