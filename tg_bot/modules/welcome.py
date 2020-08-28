@@ -93,7 +93,7 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text("Oh,Do you know who This is?\n He is My Master (The One Who Created Me) 🥰 \m\n Welcome Master❤️\n I am Feeling Proud that I was given a Chance to Welcome You.🥳")
+                update.effective_message.reply_text("Oh, Do you know who This is?\nHe is My Master (The One Who Created Me) 🥰 \n\nWelcome Master❤️\nI am Feeling Proud that I was given a Chance to Welcome You.😜")
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
                                f"Bot Owner just joined the chat")
