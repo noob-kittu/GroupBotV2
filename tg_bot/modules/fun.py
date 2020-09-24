@@ -12,12 +12,19 @@ from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.extraction import extract_user
 
+GIF_ID = 'CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE'
 
 @run_async
 def runs(bot: Bot, update: Update):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
 
-
+@run_async
+def sanitize(bot: Bot, update: Update):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
+    reply_animation(GIF_ID, caption = f'*Sanitizes {name}*')
+    
 @run_async
 def slap(bot: Bot, update: Update, args: List[str]):
     message = update.effective_message
@@ -129,8 +136,9 @@ __help__ = """
  - /bluetext : check urself :V
  - /roll : Roll a dice.
  - /rlg : Join ears,nose,mouth and create an emo ;-;
+ - /sanitize: always use this before /pat or any contact
 """
-
+SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
@@ -140,7 +148,9 @@ BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
+#ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
 
+dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
@@ -152,6 +162,6 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 
 __mod_name__ = "FUN"
-__command_list__ = ["runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide", "table"]
+__command_list__ = ["runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide", "table", "sanitize"]
 __handlers__ = [RUNS_HANDLER, SLAP_HANDLER, ROLL_HANDLER, TOSS_HANDLER, SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER,
-                DECIDE_HANDLER, TABLE_HANDLER]
+                DECIDE_HANDLER, TABLE_HANDLER, SANITIZE_HANDLER]
