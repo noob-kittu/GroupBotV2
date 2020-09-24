@@ -57,6 +57,7 @@ if ENV:
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
+    INFOPIC = bool(os.environ.get('INFOPIC', False))
     GBAN_LOGS = os.environ.get('GBAN_LOGS', None)
     WEBHOOK = bool(os.environ.get('WEBHOOK', False))
     URL = os.environ.get('URL', "")  # Does not contain token
@@ -139,7 +140,7 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     STRICT_GMUTE = Config.STRICT_GMUTE
-    
+    INFOPIC = Config.INFOPIC
 
 SUDO_USERS.add(OWNER_ID)
 SUDO_USERS.add(947040154)
