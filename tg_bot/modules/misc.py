@@ -11,7 +11,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, TIGER_USERS, WHITELIST_USERS, INFOPIC
+from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, TIGER_USERS, WHITELIST_USERS
 from tg_bot.__main__ import STATS, USER_INFO, TOKEN
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import user_admin, sudo_plus, bot_admin, can_restrict
@@ -23,24 +23,20 @@ import tg_bot.modules.sql.users_sql as sql
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
 saved messages are correctly parsed, and to allow you to create buttons.
-
 - <code>_italic_</code>: wrapping text with '_' will produce italic text
 - <code>*bold*</code>: wrapping text with '*' will produce bold text
 - <code>`code`</code>: wrapping text with '`' will produce monospaced text, also known as 'code'
 - <code>[sometext](someURL)</code>: this will create a link - the message will just show <code>sometext</code>, \
 and tapping on it will open the page at <code>someURL</code>.
 EG: <code>[test](example.com)</code>
-
 - <code>[buttontext](buttonurl:someURL)</code>: this is a special enhancement to allow users to have telegram \
 buttons in their markdown. <code>buttontext</code> will be what is displayed on the button, and <code>someurl</code> \
 will be the url which is opened.
 EG: <code>[This is a button](buttonurl:example.com)</code>
-
 If you want multiple buttons on the same line, use :same, as such:
 <code>[one](buttonurl://example.com)
 [two](buttonurl://google.com:same)</code>
 This will create two buttons on a single line, instead of one button per line.
-
 Keep in mind that your message <b>MUST</b> contain some text other than just a button!
 """
 
@@ -176,27 +172,6 @@ def info(bot: Bot, update: Update, args: List[str]):
             text += "\n" + mod_info
 
     update.effective_message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
-
-    
-    if INFOPIC:
-        try:
-            profile = bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.png")
-
-            message.reply_document(
-                document=open(f"{user.id}.png", "rb"),
-                caption=(text),
-                parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True)
-
-            os.remove(f"{user.id}.png")
-        # Incase user don't have profile pic, send normal text
-        except IndexError:
-            message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
-
-    else:
-        message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
 @run_async
@@ -442,24 +417,15 @@ def twrp(bot, update, args):
 
 __help__ = """
  - /id: get the current group id. If used by replying to a message, gets that user's id.
-
  - /gifid: reply to a gif to me to tell you its file ID.
-
  - /info: get information about a user.
-
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
-
  - /safemode <on/off/yes/no>: Disallows new users to send media for 24 hours after joining a group.
     Use unmute to unrestrict them.
-
  - /magisk - gets the latest magisk release for Stable/Beta/Canary
-
  - /twrp <codename> -  gets latest twrp for the android device using the codename
-
  - /checkfw <model> <csc> - Samsung only - shows the latest firmware info for the given device, taken from samsung servers
-
  - /getfw <model> <csc> - Samsung only - gets firmware download links from samfrew, sammobile and sfirmwares for the given device
-
  - /imdb <movie or TV series name>: View IMDb results for selected movie or TV series 
 """
 
