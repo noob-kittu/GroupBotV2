@@ -33,10 +33,6 @@ PM_START_TEXT = """
 Hello {}, MY NAME IS {} !
 
 I AM A FUNNIEST BUT STRICT GROUP MANAGER BOT
-I am Open Source and my Code can be Found [here](github.com/KshitijGagan/GroupBotV2)
-
-To Donate us Hit /donate
-You can get Support Here [Support Group](t.me/BotSupportGroup)
 
 Click /help or Help button below to find out more about, how to use me to my full potential.
 
